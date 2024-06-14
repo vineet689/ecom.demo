@@ -1,0 +1,23 @@
+{
+"id_username":"user-name",
+"id_password":"password",
+"id_loginbutton":"login-button",
+"idlocatoraddtocartTo": "add-to-cart-sauce-labs-backpack",
+"xpathitem_priceBeforeAdd": "//div[@data-test='inventory-item-price']",
+"xpath_shopingCartbadge": "//span[@data-test='shopping-cart-badge']",
+"id_removebuttonwhileaddtocart":"remove-sauce-labs-backpack",
+"xpath_inventryitempricecheckout": "//div[@data-test='inventory-item-price']",
+"xpath_inventryitemqntycheckout": "//div[@data-test='item-quantity']",
+"id_checkoutbutton":"checkout",
+"id_label_firstNameCheckout":"first-name",
+"id_label_lastNameCheckout":"last-name",
+"id_label_postalCodeCheckout": "postal-code",
+"id_continuebutton": "continue",
+"id_cancelbutton":"cancel",  
+"xpath_errormsg":"//*[@class='error-message-container error']",
+ "cssSelector_allUser":"#All_User",
+ "xpath_totalamtCheckout":"//div[@data-test='total-label']",
+ "xpath_subtotalamtCheckout" :"//div[@data-test='subtotal-label']",
+ "xpath_taxamtCheckout":"//div[@data-test='tax-label']",
+ "id_checkoutFinish":"finish"
+}

@@ -1,0 +1,1204 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2024-06-13T10:17:22.879Z",
+        "before": [
+          {
+            "result": {
+              "duration": 979800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.before(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 5158780000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Verify end to end flow of checkout functionality placed order",
+        "description": "",
+        "id": "checkout-functionality;verify-end-to-end-flow-of-checkout-functionality-placed-order",
+        "after": [
+          {
+            "result": {
+              "duration": 700745000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.quit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 45792000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I launch the application",
+            "match": {
+              "location": "LoginStep.launchLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1526553799,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I enter Login credentials with \"standard_user\" and \"Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 32
+                },
+                {
+                  "val": "Password",
+                  "offset": 52
+                }
+              ],
+              "location": "LoginStep.enterCredentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10149764899,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I add item \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 11
+                }
+              ],
+              "location": "AddToCartSteps.i_add_particularItem_toTheCart(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23758300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I verify \"remove\" button particular item which added in the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"remove\"",
+                  "offset": 9
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particularButtonutton(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10109797700,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I verify the amount of \"Sauce Labs Backpack\" and get that",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 23
+                }
+              ],
+              "location": "AddToCartSteps.iverify_amountfor_particular_itemGetTheAmount(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 46543900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I click shopping cart basket icon",
+            "match": {
+              "location": "AddToCartSteps.i_click_cartbasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10519168700,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I verify added product name should be \u0027Sauce Labs Backpack\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Sauce Labs Backpack\u0027",
+                  "offset": 38
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particular_itemAddedintoCart(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 75596201,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I click particular button \"CheckOut\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CheckOut\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2119014000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I enter FirstName LastName and Zip",
+            "match": {
+              "location": "CheckoutSteps.i_enter_firstName_lastName_Zip()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 113771099,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I click particular button \"Continue\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Continue\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10198120200,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I verify updated total amount on checkout",
+            "match": {
+              "location": "CheckoutSteps.i_verify_updatedTotalValue_afterSum()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 82199700,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I click particular button \"Finish\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Finish\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 67765199,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I verify sucess message \"Thank you for your order!\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Thank you for your order!\"",
+                  "offset": 24
+                }
+              ],
+              "location": "CheckoutSteps.i_verifySuccessmessage(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          },
+          {
+            "name": "@checkoute2eflow"
+          },
+          {
+            "name": "@sanity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-06-13T10:18:13.890Z",
+        "before": [
+          {
+            "result": {
+              "duration": 210600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.before(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1991665600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Verify correct item and Quantity added into basket checkout functionality",
+        "description": "",
+        "id": "checkout-functionality;verify-correct-item-and-quantity-added-into-basket-checkout-functionality",
+        "after": [
+          {
+            "result": {
+              "duration": 695892199,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.quit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 49664100,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I launch the application",
+            "match": {
+              "location": "LoginStep.launchLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1549485800,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I enter Login credentials with \"standard_user\" and \"Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 32
+                },
+                {
+                  "val": "Password",
+                  "offset": 52
+                }
+              ],
+              "location": "LoginStep.enterCredentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10115349701,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I add item \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 11
+                }
+              ],
+              "location": "AddToCartSteps.i_add_particularItem_toTheCart(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 19239800,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I verify \"remove\" button particular item which added in the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"remove\"",
+                  "offset": 9
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particularButtonutton(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10618174000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "I verify the amount of \"Sauce Labs Backpack\" and get that",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 23
+                }
+              ],
+              "location": "AddToCartSteps.iverify_amountfor_particular_itemGetTheAmount(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10527491200,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "I verify the shopping cart basket quantity should be 1",
+            "match": {
+              "location": "AddToCartSteps.i_verify_shoppingCart_badgeValue()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 47955299,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "I click shopping cart basket icon",
+            "match": {
+              "location": "AddToCartSteps.i_click_cartbasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10069667700,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "I verify added product name should be \u0027Sauce Labs Backpack\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Sauce Labs Backpack\u0027",
+                  "offset": 38
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particular_itemAddedintoCart(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag2"
+          },
+          {
+            "name": "@checkoutCorrectItemQtyAddedbasket"
+          },
+          {
+            "name": "@sanity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-06-13T10:18:59.580Z",
+        "before": [
+          {
+            "result": {
+              "duration": 172600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.before(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1816759801,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 35,
+        "name": "Verify remove item from checkout page while placing order",
+        "description": "",
+        "id": "checkout-functionality;verify-remove-item-from-checkout-page-while-placing-order",
+        "after": [
+          {
+            "result": {
+              "duration": 761188999,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.quit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 52675300,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "I launch the application",
+            "match": {
+              "location": "LoginStep.launchLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1534234101,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "I enter Login credentials with \"standard_user\" and \"Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 32
+                },
+                {
+                  "val": "Password",
+                  "offset": 52
+                }
+              ],
+              "location": "LoginStep.enterCredentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10162339000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "I add item \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 11
+                }
+              ],
+              "location": "AddToCartSteps.i_add_particularItem_toTheCart(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 18654201,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "I verify \"remove\" button particular item which added in the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"remove\"",
+                  "offset": 9
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particularButtonutton(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10540507200,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "I verify the amount of \"Sauce Labs Backpack\" and get that",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 23
+                }
+              ],
+              "location": "AddToCartSteps.iverify_amountfor_particular_itemGetTheAmount(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10562340901,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "I verify the shopping cart basket quantity should be 1",
+            "match": {
+              "location": "AddToCartSteps.i_verify_shoppingCart_badgeValue()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 48966101,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "I click shopping cart basket icon",
+            "match": {
+              "location": "AddToCartSteps.i_click_cartbasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10558151701,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "I verify added product name should be \u0027Sauce Labs Backpack\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Sauce Labs Backpack\u0027",
+                  "offset": 38
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particular_itemAddedintoCart(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 83008400,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "I click particular button \"remove\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"remove\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13603700,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "I verify item removed",
+            "match": {
+              "location": "CheckoutSteps.i_verify_itemRemoved()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag3"
+          },
+          {
+            "name": "@checkoutremoveitem"
+          },
+          {
+            "name": "@sanity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-06-13T10:19:45.737Z",
+        "before": [
+          {
+            "result": {
+              "duration": 223099,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.before(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1655980000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "Verify cancel order during checkout",
+        "description": "",
+        "id": "checkout-functionality;verify-cancel-order-during-checkout",
+        "after": [
+          {
+            "result": {
+              "duration": 690461400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.quit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 49960099,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "I launch the application",
+            "match": {
+              "location": "LoginStep.launchLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1563615900,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "I enter Login credentials with \"standard_user\" and \"Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 32
+                },
+                {
+                  "val": "Password",
+                  "offset": 52
+                }
+              ],
+              "location": "LoginStep.enterCredentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10132875399,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "I add item \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 11
+                }
+              ],
+              "location": "AddToCartSteps.i_add_particularItem_toTheCart(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23070299,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "I verify \"remove\" button particular item which added in the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"remove\"",
+                  "offset": 9
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particularButtonutton(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10101699200,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "I verify the amount of \"Sauce Labs Backpack\" and get that",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 23
+                }
+              ],
+              "location": "AddToCartSteps.iverify_amountfor_particular_itemGetTheAmount(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10577496900,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "I verify the shopping cart basket quantity should be 1",
+            "match": {
+              "location": "AddToCartSteps.i_verify_shoppingCart_badgeValue()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 51983700,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "I click shopping cart basket icon",
+            "match": {
+              "location": "AddToCartSteps.i_click_cartbasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10038569300,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "I verify added product name should be \u0027Sauce Labs Backpack\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Sauce Labs Backpack\u0027",
+                  "offset": 38
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particular_itemAddedintoCart(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 82204300,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "I click particular button \"CheckOut\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CheckOut\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2014182501,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "I enter FirstName LastName and Zip",
+            "match": {
+              "location": "CheckoutSteps.i_enter_firstName_lastName_Zip()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 85699499,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "I click particular button \"Continue\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Continue\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 85520199,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "I click particular button \"Cancel\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Cancel\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 42970599,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "I verify home page visible and order cancelled",
+            "match": {
+              "location": "CheckoutSteps.i_verify_homepageopened()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag4"
+          },
+          {
+            "name": "@checkoutcancelorder"
+          },
+          {
+            "name": "@sanity"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2024-06-13T10:20:32.940Z",
+        "before": [
+          {
+            "result": {
+              "duration": 196200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.before(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 11866977699,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.setup(Scenario)"
+            }
+          }
+        ],
+        "line": 65,
+        "name": "Verify added item and quantity on checkout step two",
+        "description": "",
+        "id": "checkout-functionality;verify-added-item-and-quantity-on-checkout-step-two",
+        "after": [
+          {
+            "result": {
+              "duration": 695689401,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.quit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 43710700,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "I launch the application",
+            "match": {
+              "location": "LoginStep.launchLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1533464200,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "I enter Login credentials with \"standard_user\" and \"Password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "standard_user",
+                  "offset": 32
+                },
+                {
+                  "val": "Password",
+                  "offset": 52
+                }
+              ],
+              "location": "LoginStep.enterCredentials(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10152354900,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "I add item \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 11
+                }
+              ],
+              "location": "AddToCartSteps.i_add_particularItem_toTheCart(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25708700,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "I verify \"remove\" button particular item which added in the cart",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"remove\"",
+                  "offset": 9
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particularButtonutton(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10593037800,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "I verify the amount of \"Sauce Labs Backpack\" and get that",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 23
+                }
+              ],
+              "location": "AddToCartSteps.iverify_amountfor_particular_itemGetTheAmount(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10568414699,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "I verify the shopping cart basket quantity should be 1",
+            "match": {
+              "location": "AddToCartSteps.i_verify_shoppingCart_badgeValue()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 52034299,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "I click shopping cart basket icon",
+            "match": {
+              "location": "AddToCartSteps.i_click_cartbasket()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10554887400,
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "I verify added product name should be \u0027Sauce Labs Backpack\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027Sauce Labs Backpack\u0027",
+                  "offset": 38
+                }
+              ],
+              "location": "AddToCartSteps.i_verify_particular_itemAddedintoCart(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 88418699,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "I click particular button \"CheckOut\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CheckOut\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2095833701,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "I enter FirstName LastName and Zip",
+            "match": {
+              "location": "CheckoutSteps.i_enter_firstName_lastName_Zip()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 96080099,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "I click particular button \"Continue\" on checkout page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Continue\"",
+                  "offset": 26
+                }
+              ],
+              "location": "CheckoutSteps.i_click_particularButton(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10097876500,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "I verify the amount of \"Sauce Labs Backpack\" and get that",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Sauce Labs Backpack\"",
+                  "offset": 23
+                }
+              ],
+              "location": "AddToCartSteps.iverify_amountfor_particular_itemGetTheAmount(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48665200,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "I verify item Quantity \"1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"1\"",
+                  "offset": 23
+                }
+              ],
+              "location": "CheckoutSteps.i_verifyQuantity(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag5"
+          },
+          {
+            "name": "@checkoutverifyItemandQtyStep2"
+          },
+          {
+            "name": "@sanity"
+          }
+        ]
+      }
+    ],
+    "name": "Checkout functionality",
+    "description": "",
+    "id": "checkout-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ShopingCartScenarios.feature",
+    "tags": []
+  }
+]
