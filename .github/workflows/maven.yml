@@ -6,9 +6,13 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Build and Test
+name: Java CI with Maven
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
