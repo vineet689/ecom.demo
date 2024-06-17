@@ -26,7 +26,7 @@ jobs:
       with:
         java-version: 11
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn clean install -Dcucumber.options="--tags @checkoutCorrectItemQtyAddedbasket"
       
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
