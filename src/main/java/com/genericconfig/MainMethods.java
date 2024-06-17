@@ -36,6 +36,7 @@ import java.net.URL;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.cucumber.core.api.Scenario;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class MainMethods {
@@ -70,6 +71,18 @@ public class MainMethods {
 		        Option.addArguments("--remote-allow-origins=*");
 				driver=new ChromeDriver(Option);
 				driver.manage().window().maximize();
+			}
+			else if(EnvConfig.browser.equalsIgnoreCase("headless")) {
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--no-sandbox");
+				options.addArguments("--remote-allow-origins=*");
+				options.addArguments("--disable-dev-shm-usage");
+				options.addArguments("--headless");
+				driver = new ChromeDriver(options);
+		 
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+				driver.manage().window().maximize();  
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

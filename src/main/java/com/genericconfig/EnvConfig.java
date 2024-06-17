@@ -17,7 +17,7 @@ public class EnvConfig {
 	public static String EnvInfo;
 	public static String jsonFileType;
 	public static String usernameTextbox;
-	public static String browser= "chrome";
+	public static String browser= "headless";
 	public static String Device;
 	public static String Env;
 	public static String siteUrl;
