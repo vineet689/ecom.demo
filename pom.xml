@@ -1,12 +1,9 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>  
   <groupId>com.demo.automation</groupId>
   <artifactId>com.demo.automation.project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-
- 
  <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -35,7 +32,6 @@
         <infogherkin.version>2.7.3</infogherkin.version>
    -->
    </properties>
-      
   
   <dependencies>
 	  
@@ -162,15 +158,270 @@
     <scope>compile</scope>
 </dependency>
 
+  </dependencies>
 
-
-
-
-
-
-
-</dependencies>
   
+<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>${project.build.directory}</targetPath>
+				<includes>
+					<include>log4j.properties</include>
+				</includes>
+			</resource>
+		</resources>
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.16</version>
+					<configuration>
+						<skipTests>true</skipTests>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>2.19</version>
+					<configuration>
+						<forkCount>${failsafe.fork.count}</forkCount>
+						<reuseForks>true</reuseForks>
+						<includes>
+							<include>${classes}</include>
+						</includes>
+						<runOrder>alphabetical</runOrder>
+						<argLine>-XX:+UseG1GC -Xmx512m -XX:MaxMetaspaceSize=128m -XX:G1HeapRegionSize=512k -Xss300k -XX:G1ReservePercent=15 -XX:MaxGCPauseMillis=600 -XX:ParallelGCThreads=2 -XX:ConcGCThreads=1 -XX:G1ConcRefinementThreads=2 -XX:InitiatingHeapOccupancyPercent=40 -XX:CompileThreshold=20000 -XX:CICompilerCount=2 -XX:+OptimizeStringConcat -XX:+ExplicitGCInvokesConcurrent -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:CompressedClassSpaceSize=64m -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:NativeMemoryTracking=detail -XX:ReservedCodeCacheSize=128m -XX:CodeCacheMinimumFreeSpace=50k -XX:MaxDirectMemorySize=256m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -Djava.security.egd=file:/dev/./urandom </argLine>
+						<!-- <argLine>-XX:MaxPermSize=256m</argLine> -->
+
+					</configuration>
+
+
+				</plugin>
+				<plugin>
+					<groupId>com.github.temyers</groupId>
+					<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+					<version>2.2.0</version>
+					<configuration>
+						<!-- Mandatory -->
+						<glue>com.actions</glue>
+						<!-- These are the default values -->
+						<outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
+						<featuresDirectory>src/test/resources/features/</featuresDirectory>
+						<cucumberOutputDir>target/cucumber-reports</cucumberOutputDir>
+						<format>json,html</format>
+						<filterFeaturesByTags>true</filterFeaturesByTags>
+					</configuration>
+
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.5.3</version>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.github.temyers</groupId>
+										<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+										<versionRange>[0.1.1,)</versionRange>
+										<goals>
+											<goal>generateRunners</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>net.masterthought</groupId>
+					<artifactId>maven-cucumber-reporting</artifactId>
+					<version>3.14.0</version>
+					<executions>
+						<execution>
+							<id>execution</id>
+							<phase>post-integration-test</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+							<configuration>
+								<projectName>com.demo.automation.projec</projectName>
+								<buildNumber>${project.build.number}</buildNumber>
+								<outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
+								<cucumberOutput>${project.build.directory}/cucumber-reports</cucumberOutput>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>com.github.temyers</groupId>
+				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>generateRunners</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>generateRunners</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-failsafe-plugin</artifactId> 
+				<executions> <execution> <id>failsafe-integration-test</id> <phase>integration-test</phase> 
+				<goals> <goal>integration-test</goal> </goals> </execution> </executions> 
+				</plugin> -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>failsafe-integration-test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+	<!-- profiles -->
+	<profiles>
+		<profile>
+			<id>serial</id>
+			<properties>
+				<classes>**/Runner.java</classes>
+			</properties>
+		</profile>
+		<profile>
+			<id>rerun</id>
+			<properties>
+				<failsafe.fork.count>${parallel.fork.count}</failsafe.fork.count>
+				<classes>**/*Rerun.java</classes>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>parallel</id>
+			<properties>
+				<failsafe.fork.count>${parallel.fork.count}</failsafe.fork.count>
+				<classes>**/*Test.java</classes>
+			</properties>
+		</profile>
+		<!-- browsers -->
+		<profile>
+			<id>firefox</id>
+			<properties>
+				<capabilities>/firefox.capabilities</capabilities>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>chrome</id>
+			<properties>
+				<capabilities>/chrome.capabilities</capabilities>
+			</properties>
+		</profile>
+		<profile>
+			<id>ie</id>
+			<properties>
+				<capabilities>/ie.capabilities</capabilities>
+			</properties>
+		</profile>
+		<profile>
+			<id>safari</id>
+			<properties>
+				<capabilities>/safari.capabilities</capabilities>
+			</properties>
+		</profile>
+		<profile>
+			<id>phantomjs</id>
+			<properties>
+				<capabilities>/phantomjs.capabilities</capabilities>
+			</properties>
+		</profile>
+		<profile>
+			<id>opera</id>
+			<properties>
+				<capabilities>/opera.capabilities</capabilities>
+			</properties>
+		</profile>
+		<profile>
+			<id>htmlunit</id>
+			<properties>
+				<capabilities>/htmlunit.capabilities</capabilities>
+			</properties>
+		</profile>
+		<!-- environments -->
+		<profile>
+			<id>localhost</id>
+			<properties>
+				<site.url>http://localhost/</site.url>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>devhost</id>
+			<properties>
+				<site.url>http://devhost/</site.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>testhost</id>
+			<properties>
+				<site.url>http://testhost/</site.url>
+			</properties>
+		</profile>
+		<profile>
+			<id>prodhost</id>
+			<properties>
+				<site.url>http://prodhost.com/</site.url>
+			</properties>
+		</profile>
+		<!-- grid -->
+		<profile>
+			<id>nogrid</id>
+			<properties>
+				<grid.url></grid.url>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>grid</id>
+			<properties>
+				<grid.url>http://localhost:4444/wd/hub/</grid.url>
+			</properties>
+		</profile>
+	</profiles>
 
   
 </project>
