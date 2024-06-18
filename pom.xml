@@ -64,8 +64,8 @@
     <version>4.7.0</version>
     <scope>test</scope>
 </dependency>
-
 <dependency>
+
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>4.12</version>
@@ -263,7 +263,7 @@
 								<projectName>com.demo.automation.projec</projectName>
 								<buildNumber>${project.build.number}</buildNumber>
 								<outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-								<cucumberOutput>${project.build.directory}/cucumber-reports</cucumberOutput>
+								<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
 							</configuration>
 						</execution>
 					</executions>
