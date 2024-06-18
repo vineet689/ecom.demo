@@ -263,7 +263,7 @@
 								<projectName>com.demo.automation.projec</projectName>
 								<buildNumber>${project.build.number}</buildNumber>
 								<outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
-								<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+								<cucumberOutput>${project.build.directory}/cucumber-reports</cucumberOutput>
 							</configuration>
 						</execution>
 					</executions>
