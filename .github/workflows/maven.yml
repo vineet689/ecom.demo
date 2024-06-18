@@ -26,14 +26,10 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn clean install -Dcucumber.options="--tags @checkoutCorrectItemQtyAddedbasket"
+      run: mvn clean install -Dcucumber.options="--tags @sanity"
       
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./target/cucumber-report-html/cucumber-html-reports
-    - uses: deblockt/cucumber-report-annotations-action@v1.7
-      with:
-         access-token: ${{ secrets.GITHUB_TOKEN }}
-         path: "**/cucumber-report.json"
