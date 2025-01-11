@@ -1,0 +1,34 @@
+package practices;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+
+
+public class SelfHealingSelenium {
+// method for self-healing element finding 1 usage
+
+public WebElement findElementWithRetry(WebDriver driver, String primaryLocator, String[] alternativeLocators) { 
+	WebElement element = null;
+	
+	try {
+		// Attempt to find the element using the primary locator
+		element = driver.findElement(By.xpath(primaryLocator));
+		} catch (Exception e) { 
+			// Log or handle the exception as needed
+			System.out.println(primaryLocator + "- Primary locator failed and trying self-healing with alternate locators");
+			// If the primary locator fails, try alternative locators
+			for (String altLocator: alternativeLocators) {
+				try {
+					element = driver.findElement(By.xpath(altLocator));
+					System.out.println(altLocator + " - Alternate locator is chosen and worked. Please update locators."); // If alternative locator succeeds, break the loop break;
+					} catch (Exception ex) {
+						// Log or handle the exception for the alternative locator
+						System.err.println(altLocator +" - Alternate locator is chosen and failed. Please update locators.");
+						}
+				}
+			}
+	return element;
+}
+}
